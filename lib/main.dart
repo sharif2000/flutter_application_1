@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center, 
             children: [Text("We Recommend", style: TextStyle(fontSize: 26.0)),
-            Text("It's lonely for me inside this phone.",style: TextStyle(fontSize: 26.0)),]
+            Text("Resturant 1",style: TextStyle(fontSize: 20.0)),
+            Image.asset('Resturant.webp'),]
           ),
         ),
         drawer: Drawer(child: Center(child: Text("Settings will be here"),),),
