@@ -1,23 +1,34 @@
-// ignore_for_file: prefer_const_constructors, annotate_overrides, use_key_in_widget_constructors, sort_child_properties_last, deprecated_member_use, prefer_const_literals_to_create_immutables
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, unused_local_variable
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+        primary: Colors.yellow.shade300,
+        onPrimary: Colors.black,
+        textStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.bold));
+
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: (Text("Quarrtsi", style: TextStyle(fontSize: 26.0)))),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, 
-            children: [Text("We Recommend", style: TextStyle(fontSize: 26.0)),
-            Text("Resturant 1",style: TextStyle(fontSize: 20.0)),
-            Image.asset('Resturant.webp'),]
+        home: Scaffold(
+            body: Stack(children: <Widget>[
+      Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("Resturant2.png"),
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-        drawer: Drawer(child: Center(child: Text("Settings will be here"),),),
-      )
-    );
+          child: null),
+      Center(
+          child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ElevatedButton(style: style, onPressed: () {}, child: const Text('Next')),
+        )
+      ]))
+    ])));
   }
 }
